@@ -3,19 +3,3 @@ Allow: /
 Disallow: /api/
 
 Sitemap: https://vidflair.com/sitemap.xml
-
-# LLM-friendly content
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
