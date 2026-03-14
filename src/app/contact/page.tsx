@@ -18,25 +18,25 @@ export default function ContactPage() {
         { name: 'Contact', url: 'https://vidflair.com/contact' },
       ]} />
 
-      <section className="pt-32 pb-20 md:pt-40 md:pb-28">
+      <section className="pt-40 pb-28 md:pt-52 md:pb-40">
         <div className="container-wide">
-          <nav className="flex items-center gap-2 text-xs mb-6" style={{ color: 'var(--color-text-faint)' }} aria-label="Breadcrumb">
+          <nav className="flex items-center gap-2 text-xs mb-8" style={{ color: 'var(--color-text-faint)' }} aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[var(--color-text)] transition-colors">Home</Link>
             <span>/</span>
             <span style={{ color: 'var(--color-text-muted)' }}>Contact</span>
           </nav>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-28">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6" style={{ fontFamily: 'var(--font-display)', lineHeight: '1.05' }}>
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-8" style={{ fontFamily: 'var(--font-display)', lineHeight: '1.05' }}>
                 Let&apos;s Talk About<br />
                 <span className="text-gradient">Your Next Project</span>
               </h1>
-              <p className="text-lg mb-10" style={{ color: 'var(--color-text-muted)', lineHeight: '1.7' }}>
+              <p className="text-lg mb-12" style={{ color: 'var(--color-text-muted)', lineHeight: '1.7' }}>
                 Share your project details and receive a transparent, itemized quote within 24 hours. No obligation, no pressure — just honest pricing from a team that speaks your language.
               </p>
 
-              <div className="space-y-6 mb-12">
+              <div className="space-y-8 mb-14">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'var(--color-accent-muted)', color: 'var(--color-accent)' }}>
                     <Mail size={18} />
@@ -66,9 +66,9 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="p-5 rounded-xl" style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)' }}>
-                <h3 className="text-sm font-semibold mb-2">What happens next?</h3>
-                <ol className="space-y-2 text-sm" style={{ color: 'var(--color-text-muted)' }}>
+              <div className="p-7 rounded-xl" style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)' }}>
+                <h3 className="text-sm font-semibold mb-4">What happens next?</h3>
+                <ol className="space-y-3 text-sm" style={{ color: 'var(--color-text-muted)' }}>
                   <li className="flex items-start gap-2">
                     <span className="font-bold shrink-0" style={{ color: 'var(--color-accent)' }}>1.</span>
                     We review your brief and ask any clarifying questions
@@ -85,8 +85,8 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl" style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)' }}>
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)' }}>Get Your Free Quote</h2>
+            <div className="p-10 rounded-2xl" style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)' }}>
+              <h2 className="text-xl font-bold mb-8" style={{ fontFamily: 'var(--font-display)' }}>Get Your Free Quote</h2>
               <ContactForm />
             </div>
           </div>

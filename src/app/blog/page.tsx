@@ -20,35 +20,35 @@ export default function BlogIndex() {
         { name: 'Blog', url: 'https://vidflair.com/blog' },
       ]} />
 
-      <section className="pt-32 pb-8 md:pt-40 md:pb-12">
+      <section className="pt-40 pb-12 md:pt-52 md:pb-16">
         <div className="container-default">
-          <nav className="flex items-center gap-2 text-xs mb-6" style={{ color: 'var(--color-text-faint)' }} aria-label="Breadcrumb">
+          <nav className="flex items-center gap-2 text-xs mb-8" style={{ color: 'var(--color-text-faint)' }} aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[var(--color-text)] transition-colors">Home</Link>
             <span>/</span>
             <span style={{ color: 'var(--color-text-muted)' }}>Blog</span>
           </nav>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4" style={{ fontFamily: 'var(--font-display)' }}>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6" style={{ fontFamily: 'var(--font-display)' }}>
             Production Insights
           </h1>
-          <p className="text-lg max-w-2xl" style={{ color: 'var(--color-text-muted)' }}>
+          <p className="text-lg max-w-2xl" style={{ color: 'var(--color-text-muted)', lineHeight: '1.7' }}>
             Guides, pricing breakdowns, and insider knowledge for filming in Bangkok and Thailand.
           </p>
         </div>
       </section>
 
-      <section className="pb-20 md:pb-28">
+      <section className="pb-28 md:pb-40">
         <div className="container-default">
-          <div className="space-y-6">
+          <div className="space-y-8">
             {posts.map((post, i) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group block p-8 rounded-2xl transition-all hover:translate-y-[-2px]"
+                className="group block p-10 rounded-2xl transition-all hover:translate-y-[-2px]"
                 style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)' }}
               >
-                <div className="flex flex-col md:flex-row md:items-start gap-6">
+                <div className="flex flex-col md:flex-row md:items-start gap-8">
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-3">
+                    <div className="flex items-center gap-3 mb-4">
                       <span className="text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: 'var(--color-accent-muted)', color: 'var(--color-accent)' }}>
                         {post.category}
                       </span>
@@ -56,10 +56,10 @@ export default function BlogIndex() {
                         <Clock size={12} /> {post.readTime}
                       </span>
                     </div>
-                    <h2 className="text-xl md:text-2xl font-bold mb-3 group-hover:text-[var(--color-accent)] transition-colors" style={{ fontFamily: 'var(--font-display)' }}>
+                    <h2 className="text-xl md:text-2xl font-bold mb-4 group-hover:text-[var(--color-accent)] transition-colors" style={{ fontFamily: 'var(--font-display)' }}>
                       {post.title}
                     </h2>
-                    <p className="text-sm mb-4" style={{ color: 'var(--color-text-muted)', lineHeight: '1.7' }}>
+                    <p className="text-sm mb-5" style={{ color: 'var(--color-text-muted)', lineHeight: '1.7' }}>
                       {post.excerpt}
                     </p>
                     <span className="inline-flex items-center gap-1.5 text-sm font-medium" style={{ color: 'var(--color-accent)' }}>
