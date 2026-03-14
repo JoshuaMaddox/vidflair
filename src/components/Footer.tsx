@@ -2,65 +2,65 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[var(--color-border)] pt-16 pb-8" style={{ background: 'var(--color-surface)' }}>
+    <footer className="border-t border-[var(--color-border)] pt-24 pb-12" style={{ background: 'var(--color-surface)' }}>
       <div className="container-wide">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          {/* Brand */}
-          <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect width="40" height="40" rx="8" fill="var(--color-accent)"/>
-                <path d="M14 12L30 20L14 28V12Z" fill="var(--color-bg)" />
-              </svg>
-              <span className="text-lg font-bold" style={{ fontFamily: 'var(--font-display)' }}>VidFlair</span>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+          <div className="md:col-span-2">
+            <Link href="/" className="inline-block mb-5">
+              <span className="text-xl font-bold" style={{ fontFamily: 'var(--font-display)' }}>VidFlair</span>
             </Link>
-            <p className="text-sm text-[var(--color-text-muted)] max-w-[280px]">
-              Professional video production in Bangkok for international brands and businesses. English-speaking crew, transparent pricing, global quality.
+            <p className="text-sm max-w-xs" style={{ color: 'var(--color-text-muted)', lineHeight: '1.7' }}>
+              Professional video production in Bangkok. English-speaking crew, transparent pricing, international quality.
+            </p>
+            <p className="text-sm mt-5">
+              <a href="mailto:hello@vidflair.com" style={{ color: 'var(--color-accent)' }}>hello@vidflair.com</a>
             </p>
           </div>
-
-          {/* Services */}
           <div>
-            <h3 className="text-sm font-semibold mb-4 text-[var(--color-text)]">Services</h3>
-            <ul className="space-y-2.5">
-              <li><Link href="/services/corporate-video-production-bangkok" className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">Corporate Video</Link></li>
-              <li><Link href="/services/social-media-video-production-bangkok" className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">Social Media Video</Link></li>
-              <li><Link href="/services/event-videography-bangkok" className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">Event Videography</Link></li>
-              <li><Link href="/services/drone-videography-bangkok" className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">Drone Videography</Link></li>
-              <li><Link href="/services/post-production-bangkok" className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">Post-Production</Link></li>
-              <li><Link href="/services/youtube-production-bangkok" className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">YouTube Production</Link></li>
+            <h3 className="text-sm font-semibold mb-5" style={{ fontFamily: 'var(--font-display)' }}>Services</h3>
+            <ul className="space-y-3">
+              {['corporate-video', 'social-media-content', 'commercial-video', 'event-coverage', 'documentary', 'interview-video', 'product-video'].map(slug => (
+                <li key={slug}>
+                  <Link href={`/services/${slug}`} className="text-sm hover:text-[var(--color-text)] transition-colors capitalize" style={{ color: 'var(--color-text-muted)' }}>
+                    {slug.replace(/-/g, ' ')}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
-
-          {/* Resources */}
           <div>
-            <h3 className="text-sm font-semibold mb-4 text-[var(--color-text)]">Resources</h3>
-            <ul className="space-y-2.5">
-              <li><Link href="/blog" className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">Blog</Link></li>
-              <li><Link href="/blog/video-production-costs-bangkok-2026" className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">Bangkok Production Costs</Link></li>
-              <li><Link href="/blog/filming-permits-thailand-guide" className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">Filming Permits Guide</Link></li>
-              <li><Link href="/pricing" className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">Pricing</Link></li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="text-sm font-semibold mb-4 text-[var(--color-text)]">Contact</h3>
-            <ul className="space-y-2.5">
-              <li><Link href="/contact" className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">Get a Quote</Link></li>
-              <li><a href="mailto:hello@vidflair.com" className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">hello@vidflair.com</a></li>
-              <li><span className="text-sm text-[var(--color-text-muted)]">Bangkok, Thailand</span></li>
+            <h3 className="text-sm font-semibold mb-5" style={{ fontFamily: 'var(--font-display)' }}>Company</h3>
+            <ul className="space-y-3">
+              {[
+                { href: '/about', label: 'About' },
+                { href: '/pricing', label: 'Pricing' },
+                { href: '/blog', label: 'Blog' },
+                { href: '/contact', label: 'Contact' },
+              ].map(item => (
+                <li key={item.href}>
+                  <Link href={item.href} className="text-sm hover:text-[var(--color-text)] transition-colors" style={{ color: 'var(--color-text-muted)' }}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
-
-        <div className="border-t border-[var(--color-border)] pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-[var(--color-text-faint)]">
-            © {new Date().getFullYear()} VidFlair. All rights reserved. Video production company in Bangkok, Thailand.
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8" style={{ borderTop: '1px solid var(--color-border)' }}>
+          <p className="text-xs" style={{ color: 'var(--color-text-faint)' }}>
+            &copy; {new Date().getFullYear()} VidFlair. All rights reserved. Bangkok, Thailand.
           </p>
-          <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer" className="text-xs text-[var(--color-text-faint)] hover:text-[var(--color-text-muted)] transition-colors">
-            Created with Perplexity Computer
-          </a>
+          <div className="flex gap-6">
+            {[
+              { href: '/about', label: 'About' },
+              { href: '/pricing', label: 'Pricing' },
+              { href: '/contact', label: 'Contact' },
+            ].map(item => (
+              <Link key={item.href} href={item.href} className="text-xs hover:text-[var(--color-text)] transition-colors" style={{ color: 'var(--color-text-faint)' }}>
+                {item.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

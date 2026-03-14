@@ -12,174 +12,308 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: 'video-production-costs-bangkok-2026',
-    title: 'Video Production Costs in Bangkok: Complete 2026 Guide',
-    date: '2026-03-14',
-    excerpt: 'A comprehensive breakdown of video production costs in Bangkok compared to Western markets. Updated pricing for 2026 with real data from the Thai production industry.',
-    author: 'VidFlair Team',
-    category: 'Pricing Guides',
-    readTime: '8 min read',
-    metaDescription: 'How much does video production cost in Bangkok in 2026? Complete pricing guide with crew rates, equipment costs, and comparison to US/UK/Australian prices.',
-    content: `
-## How Much Does Video Production Cost in Bangkok?
+    slug: 'video-production-cost-bangkok-2025',
+    title: 'Video Production Cost in Bangkok: 2025 Complete Guide',
+    date: '2025-04-15',
+    excerpt: 'A complete breakdown of what video production actually costs in Bangkok in 2025 — crew day rates, equipment rental, locations, permits, and post-production.',
+    author: 'VidFlair Editorial',
+    category: 'Pricing',
+    readTime: '9 min read',
+    metaDescription: 'Complete 2025 guide to video production costs in Bangkok. Real numbers for crew, equipment, locations, permits, and post-production. Updated for current market rates.',
+    content: `## What Does Video Production Actually Cost in Bangkok?
 
-Bangkok has become one of Asia's most attractive video production hubs, offering international-quality output at significantly lower costs than Western markets. Thailand's film sector generated **7.717 billion baht (~$245M USD) from 546 foreign productions in 2025**, and the government is targeting 10%+ growth in 2026.
+Bangkok has emerged as one of the most cost-effective cities in the world for high-quality video production. But “cheap” is relative — and vague pricing estimates don’t help you plan a real budget.
 
-Here's what you can expect to pay for professional video production in Bangkok in 2026.
+This guide breaks down actual 2025 costs based on current market rates in Bangkok.
 
-## Corporate Video Production Costs
+## Crew Day Rates (2025)
 
-| Service | Bangkok Price | US/UK Equivalent |
-|---------|--------------|-----------------|
-| Corporate video (1-2 min) | ฿150,000-300,000 ($4,200-$8,500) | $10,000-$25,000 |
-| Branded web commercial (30-60 sec) | ฿800,000+ ($22,700+) | $50,000-$150,000 |
-| Event videography (full day) | ฿50,000-120,000 ($1,420-$3,400) | $3,000-$8,000 |
-| Social media video (per piece) | ฿15,000-35,000 ($425-$1,000) | $1,500-$5,000 |
+| Role | Day Rate (USD) | Notes |
+|------|---------------|-------|
+| Director of Photography | $350–$600 | Varies by experience & camera system |
+| Camera Operator | $200–$400 | Often doubles as DP on smaller shoots |
+| Gaffer / Lighting Director | $150–$300 | Essential for professional results |
+| Sound Recordist | $120–$250 | Includes basic sound kit |
+| Production Assistant | $80–$150 | Set assistance, logistics |
+| Producer / Line Producer | $250–$500 | Project management, logistics |
+| English-Speaking Director | $500–$1,200 | For branded content requiring creative direction |
 
-## Crew Day Rates in Bangkok
+## Camera & Equipment Rental (Per Day)
 
-| Role | Bangkok Day Rate | US Day Rate |
-|------|-----------------|-------------|
-| Director of Photography | ฿15,000-30,000 ($425-$850) | $1,500-$4,000 |
-| Camera Operator | ฿8,000-15,000 ($225-$425) | $800-$2,000 |
-| Sound Recordist | ฿6,000-10,000 ($170-$285) | $600-$1,500 |
-| Gaffer | ฿7,000-12,000 ($200-$340) | $700-$1,500 |
-| Production Assistant | ฿3,000-5,000 ($85-$140) | $300-$600 |
+| Item | Daily Rental (USD) |
+|------|-------------------|
+| Sony FX6 or FX9 package | $150–$300 |
+| RED Komodo or V-Raptor | $300–$600 |
+| ARRI ALEXA Mini | $500–$900 |
+| Basic lighting package | $100–$200 |
+| Full grip & lighting truck | $300–$600 |
+| DJI Mavic or Mini drone | $100–$200 |
+| Gimbal (Ronin, etc.) | $50–$100 |
 
-## Why Bangkok Costs Less
+## Post-Production Rates
 
-Thailand offers 40-60% savings compared to equivalent production in the US, UK, or Australia. A 2-day commercial shoot that costs $79,000-$113,000 in Los Angeles can be produced for $31,600-$62,400 in Bangkok — with the same quality equipment and comparable crew expertise.
+| Service | Rate |
+|---------|------|
+| Editor (per day) | $200–$400 |
+| Colorist (per day) | $250–$500 |
+| Sound designer / mixer | $150–$350 |
+| Motion graphics | $200–$500/day |
+| Full color grade (short-form) | $300–$800 |
 
-Key cost advantages include:
-- **Lower crew rates** without sacrificing quality
-- **Diverse locations** (modern city, temples, beaches, jungle) all within a few hours
-- **Government incentives** including up to 30% cash rebate on qualifying production expenses
-- **Established infrastructure** with international-standard equipment rental houses
+## What Does a Typical Project Cost?
 
-## Getting an Accurate Quote
+### Social Media Content Package
+**Budget: $1,200–$3,500**
+- 1–2 day shoot
+- 2-person crew
+- Sony FX camera
+- 3–5 edited videos (30–60 seconds)
+- Basic color grade
 
-The best way to budget for a Bangkok production is to get an itemized quote from a reputable production company. Look for companies that offer transparent pricing — if a company won't discuss ballpark rates before a formal brief, that's a red flag.
+### Corporate Video
+**Budget: $3,500–$9,000**
+- 2–3 day shoot
+- 3–4 person crew
+- RED or Sony FX camera
+- 1–2 finished videos (2–5 minutes)
+- Full color grade and sound mix
 
-At VidFlair, we provide transparent, itemized quotes within 24 hours of receiving your brief. No hidden markups, no surprise costs.
+### TV Commercial / Brand Campaign
+**Budget: $9,000–$25,000+**
+- 3–5 day shoot
+- 5–8 person crew
+- ARRI or RED cinema camera
+- Multiple deliverables
+- Full post-production
 
-**Ready to get a quote?** [Contact us](/contact) with your project details and we'll send you a detailed cost breakdown within one business day.
-    `.trim()
+## The Thailand 30% Cash Rebate
+
+Qualifying international productions in Thailand can receive a **30% cash rebate** on qualifying spend. This can dramatically reduce effective costs for larger productions. The program is administered by the Thailand Film Office.
+
+Requirements include minimum spend thresholds, content criteria, and in-country spend documentation. VidFlair can assist with rebate advisory and application support.
+
+## Bangkok vs. Western Markets: Real Cost Comparison
+
+| Production Element | Bangkok | Los Angeles | London |
+|-------------------|---------|-------------|--------|
+| DP day rate | $350–600 | $800–1,500 | $700–1,200 |
+| Gaffer day rate | $150–300 | $450–800 | $400–700 |
+| Studio day rate | $300–800 | $1,500–3,000 | $1,200–2,500 |
+| Editor day rate | $200–400 | $500–1,000 | $400–900 |
+
+## How to Get an Accurate Quote
+
+The most reliable way to budget a production is to get an itemized quote based on your specific brief. Variables that affect cost:
+
+- Number of shoot days
+- Crew size and specialization
+- Camera system required
+- Location accessibility and permits
+- Number of final deliverables
+- Post-production complexity
+
+**The bottom line:** Bangkok offers genuine 40–60% cost savings vs. Western markets for equivalent quality production. The key is working with a production company that operates transparently and understands international standards.`,
   },
   {
     slug: 'filming-permits-thailand-guide',
-    title: 'Complete Guide to Filming Permits in Thailand (2026)',
-    date: '2026-03-10',
-    excerpt: 'Everything international productions need to know about film permits in Thailand — costs, timelines, requirements, and how to navigate the Thailand Film Office process.',
-    author: 'VidFlair Team',
-    category: 'Guides',
-    readTime: '6 min read',
-    metaDescription: 'How to get a film permit in Thailand in 2026. Complete guide covering costs (50,000 THB base), timelines, requirements, and step-by-step process.',
-    content: `
-## Do You Need a Film Permit in Thailand?
+    title: 'Filming Permits in Thailand: The Complete Guide for International Productions',
+    date: '2025-03-22',
+    excerpt: 'Everything international productions need to know about filming permits in Thailand — locations, timelines, costs, and how to navigate the process.',
+    author: 'VidFlair Editorial',
+    category: 'Logistics',
+    readTime: '7 min read',
+    metaDescription: 'Complete guide to filming permits in Thailand. Learn what permits you need, costs, timelines, and how to navigate the process for international productions in Bangkok.',
+    content: `## Filming Permits in Thailand: What You Need to Know
 
-Any foreign production filming in Thailand requires authorization from the Thailand Film Office (TFO), a division of the Department of Tourism. This applies to commercials, TV shows, feature films, documentaries, music videos, and some types of corporate content.
+Filming in Thailand without the right permits is a risk no professional production should take. This guide covers the permit landscape for international productions in Bangkok and Thailand.
 
-**Important exception:** Small-scale content using only handheld equipment (no tripods, no lighting rigs) in public areas generally does not require a permit. However, any production with professional equipment or crew should apply.
+## Types of Locations and Their Requirements
 
-## Film Permit Costs in Thailand
+### Public Streets and Sidewalks
+Filming on public streets in Bangkok requires coordination with the **Bangkok Metropolitan Administration (BMA)**. For commercial productions, you’ll typically need:
+- Production company letter of intent
+- Script or treatment
+- Proof of insurance
+- Advance notice of 3–7 business days
 
-| Item | Cost |
-|------|------|
-| Base film permit fee | ฿50,000 |
-| Per foreign crew member fee | ฿5,000 per person |
-| Film Board Officer (Bangkok) | ฿3,500/day |
-| Film Board Officer (outside Bangkok) | ฿5,000/day |
-| Licensed Film Coordinator | ฿6,000/day |
+**Cost:** ฿2,000–฿10,000 per day depending on location and crew size.
 
-## Step-by-Step Permit Process
+### Private Property
+Private venues (hotels, malls, offices) operate independently. You’ll need to negotiate directly with venue management. Standard practice:
+- Location agreement / release form
+- Certificate of insurance naming the venue
+- Clear scope of production activities
+- Cleaning / restoration deposit (often required)
 
-### Step 1: Engage a Licensed Film Coordinator
-All foreign productions must work with a Thai Film Office-licensed coordinator. This is not optional — the TFO will not process applications directly from foreign entities.
+**Cost:** ฿5,000–฿50,000+ per day depending on venue prestige.
 
-### Step 2: Prepare Your Application
-Required documents include:
-- Complete shooting script or treatment
-- Detailed shooting schedule with locations
-- Full crew list with passport copies
-- Equipment list
-- Insurance documentation
-- Letter of intent from the production company
+### National Parks and Natural Areas
+Shooting in national parks requires permits from the **National Park, Wildlife and Plant Conservation Department**. Application timelines can be 2–4 weeks.
 
-### Step 3: Submit to the Thailand Film Office
-Your licensed coordinator submits the application to the TFO. Processing times:
-- **Short-form content** (commercials, music videos): 5-10 business days
-- **Feature films and TV series**: 4-6 weeks
+### Historical Sites and Temples
+Sites managed by the Fine Arts Department require advance approval. Religious sites (temples in active use) require coordination with temple administration. Commercial shoots are often restricted or require significant fees.
 
-### Step 4: Receive Approval & Film Board Officer Assignment
-Upon approval, a Film Board Officer is assigned to monitor your shoot. This officer must be present on set for all filming days.
+### Government Buildings
+Commercial filming inside or immediately adjacent to government buildings requires written approval from the relevant ministry or authority.
 
-## Thailand's 30% Cash Rebate
+## The Thailand Film Office (TFO)
 
-Thailand offers a cash rebate of up to 30% on qualifying production expenses for foreign productions. This makes Thailand one of the most financially attractive filming destinations in Southeast Asia. The rebate applies to expenses incurred within Thailand, including crew, equipment, locations, and services.
+The **Thailand Film Office** under the Ministry of Tourism and Sports is the primary liaison for international productions. Services include:
+- One-stop permit facilitation
+- Location assistance
+- Police escort coordination (for larger productions)
+- 30% cash rebate program administration
 
-## How VidFlair Can Help
+The TFO has streamlined the process significantly in recent years for productions that register in advance.
 
-We handle all permit logistics for our international clients as a standard part of our production service. From TFO applications to location permits, Film Board Officer coordination, and rebate applications — we manage the entire process so you can focus on your creative vision.
+## Typical Permit Timeline
 
-**Need help with filming permits?** [Get in touch](/contact) and we'll guide you through the process.
-    `.trim()
+| Permit Type | Lead Time |
+|------------|----------|
+| Street / public area | 3–7 business days |
+| Private commercial venue | 1–5 days |
+| National park | 2–4 weeks |
+| Historical site | 2–6 weeks |
+| TFO facilitation | 2–4 weeks from application |
+
+## What Your Production Company Should Handle
+
+A professional Bangkok production company should manage the entire permit process on your behalf:
+
+- Identify all required permits for your locations
+- Submit applications with proper documentation
+- Coordinate with local authorities and venue management
+- Maintain copies of all permits on-set
+- Brief crew on any location-specific restrictions
+
+## Common Mistakes to Avoid
+
+- **Filming without permits at temples**: Even documentary-style casual shooting can result in fines and expulsion.
+- **Underestimating timelines**: Budget at least 3 weeks for any shoot requiring government permits.
+- **Missing insurance requirements**: Most venues require production liability insurance naming them as additional insured.
+- **Drone permits**: UAV operation in Thailand requires Civil Aviation Authority of Thailand (CAAT) permits. Not all locations permit drone operation.
+
+## Drone Filming in Bangkok
+
+Drone permits in Thailand are handled by the **Civil Aviation Authority of Thailand (CAAT)**. Requirements:
+- CAAT drone registration
+- Pilot certification
+- Location-specific airspace approval
+- No-fly zone compliance (airports, military areas, central Bangkok)
+
+Lead time: 2–4 weeks. Production companies with established relationships can often expedite.
+
+## Bottom Line
+
+Permit complexity is a real consideration for international productions in Thailand — but it’s entirely manageable with proper planning. The key is starting the process early and working with a production company that has existing relationships with authorities and venues.`,
   },
   {
-    slug: 'bangkok-vs-bali-video-production',
-    title: 'Bangkok vs. Bali for Video Production: Which Is Better?',
-    date: '2026-03-07',
-    excerpt: 'A detailed comparison of Bangkok and Bali as video production destinations — costs, crew quality, infrastructure, locations, and logistics for international brands.',
-    author: 'VidFlair Team',
-    category: 'Comparisons',
-    readTime: '5 min read',
-    metaDescription: 'Bangkok vs Bali for video production — costs, crew quality, infrastructure, locations compared. Which SE Asian hub is right for your production?',
-    content: `
-## Bangkok vs. Bali: Head-to-Head Production Comparison
+    slug: 'corporate-video-production-bangkok',
+    title: 'Corporate Video Production in Bangkok: What to Expect',
+    date: '2025-02-10',
+    excerpt: 'A practical guide to producing corporate videos in Bangkok — what the process looks like, what it costs, and how to get the most from your production.',
+    author: 'VidFlair Editorial',
+    category: 'Production',
+    readTime: '6 min read',
+    metaDescription: 'Practical guide to corporate video production in Bangkok. Learn what the process involves, realistic costs, and how to work with a Bangkok production company.',
+    content: `## Corporate Video Production in Bangkok: A Practical Guide
 
-Both Bangkok and Bali attract international productions, but they serve different needs. Here's how they compare across every dimension that matters.
+Bangkok has become a destination of choice for corporate video production — combining world-class infrastructure with production costs that are 40–60% below Western markets. Here’s what the process actually looks like.
 
-| Factor | Bangkok | Bali |
-|--------|---------|------|
-| **Crew depth** | Large pool of experienced, English-speaking crew | Smaller pool, often fly in from Jakarta |
-| **Equipment availability** | Multiple full-service rental houses | Limited, often shipped from Jakarta/Singapore |
-| **Government incentives** | Up to 30% cash rebate | No production incentive program |
-| **Location diversity** | Modern city, temples, rivers, markets, beaches (2hrs) | Beaches, rice terraces, temples, jungle |
-| **International flights** | Major hub — direct flights to 100+ cities | Limited international connections |
-| **Studio facilities** | Multiple sound stages and studios | Very limited |
-| **Post-production** | Established post houses (color, VFX, sound) | Minimal local post-production |
-| **Cost comparison** | 40-60% less than Western markets | 50-65% less than Western markets |
-| **Permits** | Established TFO process | Less structured permitting |
+## What Counts as Corporate Video?
 
-## When to Choose Bangkok
+Corporate video covers a broad range:
 
-Bangkok is the better choice when you need:
-- **A large, experienced crew** with English fluency
-- **Post-production services** alongside production
-- **Urban, modern locations** mixed with cultural sites
-- **Government incentives** (30% rebate)
-- **Complex logistics** that require established infrastructure
+- **Company profile videos** (2–5 minutes, overview of business)
+- **Product demos and explainers**
+- **Employee testimonials and culture videos**
+- **Training and onboarding content**
+- **Event highlights and keynote coverage**
+- **Investor and stakeholder communications**
+- **Social media content series**
 
-## When to Choose Bali
+## The Production Process
 
-Bali is the better choice when you need:
-- **Tropical nature-focused content** (beaches, rice terraces, jungle)
-- **Wellness and lifestyle aesthetics** that Bali is known for
-- **Ultra-low-budget** productions where minimal crew is acceptable
-- **A specific "Bali look"** that can't be replicated elsewhere
+### 1. Brief and Quoting
+A good production company will ask detailed questions before quoting:
+- What is the primary objective of the video?
+- Who is the audience?
+- Where will it be distributed (internal, social, broadcast)?
+- What’s the timeline?
+- Do you have existing brand assets and style guides?
 
-## The Bottom Line
+Expect a detailed, itemized quote within 24–48 hours of a thorough brief.
 
-For most international commercial, corporate, and branded content productions, **Bangkok offers superior infrastructure, crew depth, and financial incentives**. Bali excels for nature-focused lifestyle content, but Bangkok's combination of professional resources, diverse locations, and government support makes it the stronger all-around production hub in Southeast Asia.
+### 2. Pre-Production (1–2 weeks)
+- Script development or refinement
+- Shot list and storyboard creation
+- Location scouting and booking
+- Permit acquisition
+- Crew and equipment scheduling
+- Call sheet preparation
 
-**Planning a production in Bangkok?** [Contact VidFlair](/contact) for a free consultation and quote.
-    `.trim()
-  }
+### 3. Production (1–3 days typically)
+A standard corporate video shoot involves:
+- Director of Photography
+- Camera operator (sometimes the DP)
+- Gaffer / lighting
+- Sound recordist
+- Producer (on-set liaison)
+- PA / set assistant
+
+### 4. Post-Production (1–3 weeks)
+- Assembly cut shared for feedback
+- Revisions round 1
+- Color grading
+- Sound design and music
+- Final delivery in required formats
+
+## Realistic Timelines
+
+| Phase | Duration |
+|-------|----------|
+| Quoting and approval | 2–5 days |
+| Pre-production | 1–2 weeks |
+| Production | 1–3 days |
+| Post-production | 1–3 weeks |
+| **Total (typical)** | **3–6 weeks** |
+
+Rush timelines are possible but add cost.
+
+## What Does Corporate Video Cost in Bangkok?
+
+| Type | Budget Range |
+|------|-------------|
+| Simple talking head / interview | $800–2,500 |
+| Product demo (1 day shoot) | $1,500–4,000 |
+| Company profile (2–3 days) | $4,000–12,000 |
+| Full brand film (3–5 days) | $10,000–25,000+ |
+
+## What to Look for in a Bangkok Production Company
+
+- **Transparent pricing**: You should receive an itemized quote, not a round number.
+- **English-speaking producer**: Your day-to-day contact should communicate fluently in your language.
+- **Portfolio**: Review work in your category. Corporate video is different from music videos or weddings.
+- **Clear contracts**: Payment terms, revision rounds, delivery specs, and IP ownership should all be explicit.
+- **References**: Ask for references from international clients if you’re based outside Thailand.
+
+## Common Mistakes
+
+- **Choosing on price alone**: The lowest quote often reflects the lowest quality or hidden fees.
+- **Skipping pre-production**: Attempting to reduce cost by shortening pre-production almost always results in higher costs and worse output.
+- **Ambiguous briefs**: The more specific your brief, the more accurate your quote and the better your final video.
+- **No revision terms**: Agree on revision rounds in advance. Unlimited revisions create scope creep and cost overruns.
+
+## Bottom Line
+
+Bangkok is an excellent location for corporate video production if you work with the right partner. The combination of production quality, cost efficiency, and English-speaking expertise makes it increasingly attractive for international brands looking to produce high-quality content without Western market price tags.`,
+  },
 ];
+
+export function getAllBlogPosts(): BlogPost[] {
+  return blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find(p => p.slug === slug);
-}
-
-export function getAllBlogPosts(): BlogPost[] {
-  return [...blogPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
