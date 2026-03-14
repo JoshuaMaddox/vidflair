@@ -1,35 +1,62 @@
 import Link from 'next/link';
 import { services } from '@/lib/services';
 import { getAllBlogPosts } from '@/lib/blog';
-import { ArrowRight, CheckCircle2, Play, ChevronRight, Star, Globe, DollarSign, Clock, Users, Zap } from 'lucide-react';
+import FAQSection from '@/components/FAQSection';
+import ContactForm from '@/components/ContactForm';
+import { FAQPageJsonLd } from '@/components/JsonLd';
+import { ArrowRight, Play, Globe, DollarSign, Zap, Users, Camera, Film, Headphones, Clapperboard } from 'lucide-react';
+
+const homeFaqs = [
+  { question: 'How much does video production cost in Bangkok?', answer: 'Costs vary by project type. Social media videos start from ฿15,000 ($425 USD), corporate videos from ฿150,000 ($4,200 USD), and event coverage from ฿25,000 ($710 USD). We provide transparent, itemized quotes within 24 hours — no hidden fees, no surprises.' },
+  { question: 'Do you provide English-speaking video crews?', answer: 'Yes. Our entire production team — from producers and directors to camera operators and editors — communicates fluently in English. We also provide bilingual Thai-English coordination for local logistics, permits, and talent.' },
+  { question: 'How long does a typical video project take?', answer: 'Most projects take 2-6 weeks from brief to final delivery. Social media content can be turned around in 5-7 business days. Corporate videos typically require 3-6 weeks. Rush timelines are available for time-sensitive projects.' },
+  { question: 'Can you work with international brands remotely?', answer: 'Absolutely. We regularly work with brands across the US, UK, Europe, and APAC. Our workflow includes video calls for briefing, shared cloud folders for asset review, and platform-agnostic delivery in any format your team needs.' },
+  { question: 'What equipment do you use?', answer: 'We shoot on RED, Sony FX, and ARRI camera systems depending on project requirements. Our grip, lighting, and audio packages are sourced from Bangkok\'s top equipment rental houses. Drone work uses DJI Mavic 4 Pro and Inspire 3 platforms.' },
+  { question: 'Do you handle filming permits in Thailand?', answer: 'Yes. We manage all Thailand Film Office (TFO) permit applications, Film Board Officer coordination, location permits, and logistics as a standard part of our production service. We also assist with the 30% government cash rebate application for qualifying productions.' },
+];
+
+const serviceIcons: Record<string, React.ReactNode> = {
+  'corporate-video-production-bangkok': <Film size={24} />,
+  'social-media-video-production-bangkok': <Zap size={24} />,
+  'event-videography-bangkok': <Camera size={24} />,
+  'drone-videography-bangkok': <Globe size={24} />,
+  'product-video-production-bangkok': <Clapperboard size={24} />,
+  'real-estate-video-bangkok': <Play size={24} />,
+  'post-production-bangkok': <Headphones size={24} />,
+  'youtube-production-bangkok': <Users size={24} />,
+};
 
 export default function HomePage() {
-  const posts = getAllBlogPosts().slice(0, 2);
+  const posts = getAllBlogPosts().slice(0, 3);
 
   return (
     <>
+      <FAQPageJsonLd faqs={homeFaqs} />
+
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center pt-32 pb-28 md:pt-44 md:pb-40">
-        <div className="container-default">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0 opacity-30" style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(232,255,71,0.12) 0%, transparent 70%)' }} />
+        <div className="container-wide relative py-40 md:py-52">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium mb-10" style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--color-text-muted)' }}>
+            <p className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium tracking-wide uppercase mb-8" style={{ background: 'var(--color-accent-muted)', color: 'var(--color-accent)' }}>
               <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--color-accent)' }} />
-              Bangkok&apos;s Premier International Production Company
-            </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-10" style={{ fontFamily: 'var(--font-display)', lineHeight: '1.02' }}>
-              World-Class Video<br />
-              <span className="text-gradient">Production in Bangkok</span>
+              Video Production in Bangkok
+            </p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8" style={{ fontFamily: 'var(--font-display)', lineHeight: '1.05' }}>
+              Your brand deserves{' '}
+              <span className="text-gradient">world-class video</span>
+              {' '}— at Bangkok prices
             </h1>
-            <p className="text-lg md:text-xl mb-14 max-w-2xl" style={{ color: 'var(--color-text-muted)', lineHeight: '1.7' }}>
-              International quality. English-speaking crew. 40–60% cost savings vs. Western markets.
-              Transparent pricing, no surprises.
+            <p className="text-lg md:text-xl max-w-2xl mb-12" style={{ color: 'var(--color-text-muted)', lineHeight: '1.8' }}>
+              Professional video production for international brands and businesses.
+              English-speaking crew, transparent pricing, and 40–60% savings compared to Western markets.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold rounded-xl transition-all hover:opacity-90" style={{ background: 'var(--color-accent)', color: 'var(--color-accent-text)' }}>
+              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4.5 text-base font-semibold rounded-xl transition-all hover:opacity-90" style={{ background: 'var(--color-accent)', color: 'var(--color-accent-text)' }}>
                 Get a Free Quote <ArrowRight size={18} />
               </Link>
-              <Link href="/services" className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-medium rounded-xl transition-all" style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--color-text-muted)' }}>
-                <Play size={16} /> View Services
+              <Link href="/services/corporate-video-production-bangkok" className="inline-flex items-center justify-center gap-2 px-8 py-4.5 text-base font-medium rounded-xl transition-all hover:border-[var(--color-border-hover)]" style={{ border: '1px solid var(--color-border)', color: 'var(--color-text)' }}>
+                View Services
               </Link>
             </div>
           </div>
@@ -37,49 +64,46 @@ export default function HomePage() {
       </section>
 
       {/* Trust bar */}
-      <section className="py-10" style={{ borderTop: '1px solid var(--color-border)', borderBottom: '1px solid var(--color-border)' }}>
+      <section className="py-6 border-y" style={{ borderColor: 'var(--color-border)' }}>
         <div className="container-wide">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { icon: <Globe size={18} />, label: 'International Clients' },
-              { icon: <DollarSign size={18} />, label: 'Transparent Pricing' },
-              { icon: <Clock size={18} />, label: '24hr Quote Turnaround' },
-              { icon: <Users size={18} />, label: 'English-Speaking Crew' },
-            ].map(item => (
-              <div key={item.label} className="flex items-center gap-3 text-sm" style={{ color: 'var(--color-text-muted)' }}>
-                <span style={{ color: 'var(--color-accent)' }}>{item.icon}</span>
-                {item.label}
-              </div>
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
+            {['English-Speaking Crew', '40–60% Cost Savings', '24-Hour Quotes', 'CAAT Licensed Drone Ops', '30% Gov. Rebate Eligible'].map(item => (
+              <span key={item} className="text-xs font-medium tracking-wide uppercase" style={{ color: 'var(--color-text-faint)' }}>{item}</span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Services */}
-      <section className="py-28 md:py-40">
-        <div className="container-default">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold" style={{ fontFamily: 'var(--font-display)' }}>Production Services</h2>
-              <p className="text-base mt-4" style={{ color: 'var(--color-text-muted)' }}>End-to-end video production for every need.</p>
-            </div>
-            <Link href="/services" className="inline-flex items-center gap-1.5 text-sm font-medium shrink-0" style={{ color: 'var(--color-accent)' }}>
-              All services <ChevronRight size={16} />
-            </Link>
+      {/* Services grid */}
+      <section className="py-36 md:py-56">
+        <div className="container-wide">
+          <div className="text-center mb-24">
+            <h2 className="text-3xl md:text-5xl font-bold mb-8" style={{ fontFamily: 'var(--font-display)' }}>
+              Everything You Need to<br className="hidden sm:block" /> Produce Great Video
+            </h2>
+            <p className="text-base md:text-lg max-w-2xl mx-auto" style={{ color: 'var(--color-text-muted)', lineHeight: '1.7' }}>
+              From concept to delivery — corporate films, social content, drone aerials, event coverage, and post-production, all under one roof in Bangkok.
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.slice(0, 6).map(service => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map(service => (
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className="group p-8 rounded-2xl transition-all hover:translate-y-[-2px]"
+                className="group relative p-8 rounded-2xl transition-all hover:translate-y-[-2px]"
                 style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)' }}
               >
-                <div className="text-2xl mb-5">{service.icon}</div>
-                <h3 className="text-lg font-semibold mb-3" style={{ fontFamily: 'var(--font-display)' }}>{service.name}</h3>
-                <p className="text-sm mb-5" style={{ color: 'var(--color-text-muted)', lineHeight: '1.6' }}>{service.shortDescription}</p>
-                <span className="inline-flex items-center gap-1.5 text-sm font-medium" style={{ color: 'var(--color-accent)' }}>
-                  Learn more <ChevronRight size={14} />
+                <div className="mb-6 w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'var(--color-accent-muted)', color: 'var(--color-accent)' }}>
+                  {serviceIcons[service.slug] || <Play size={24} />}
+                </div>
+                <h3 className="text-base font-semibold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
+                  {service.title.replace(' Bangkok', '')}
+                </h3>
+                <p className="text-sm mb-6 leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
+                  {service.description.slice(0, 120)}…
+                </p>
+                <span className="text-xs font-medium" style={{ color: 'var(--color-accent)' }}>
+                  {service.priceRange}
                 </span>
               </Link>
             ))}
@@ -87,146 +111,183 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Bangkok */}
-      <section className="py-28 md:py-40" style={{ background: 'var(--color-surface)' }}>
-        <div className="container-default">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+      {/* Why Bangkok / Why VidFlair */}
+      <section className="py-36 md:py-56" style={{ background: 'var(--color-surface)' }}>
+        <div className="container-wide">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-32">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-8" style={{ fontFamily: 'var(--font-display)' }}>Why Bangkok?</h2>
-              <p className="text-base mb-12" style={{ color: 'var(--color-text-muted)', lineHeight: '1.7' }}>
-                Thailand generated ฿7.7 billion (~$245M USD) from 546 foreign productions in 2025. Bangkok offers world-class infrastructure, diverse locations, and a 30% government cash rebate for qualifying international productions.
+              <h2 className="text-3xl md:text-4xl font-bold mb-10" style={{ fontFamily: 'var(--font-display)' }}>
+                Why Produce Video<br />in Bangkok?
+              </h2>
+              <p className="text-base mb-12" style={{ color: 'var(--color-text-muted)', lineHeight: '1.8' }}>
+                Thailand&apos;s production industry generated over ฿7.7 billion from 546 foreign productions in 2025. Here&apos;s why the world&apos;s leading brands choose Bangkok.
               </p>
-              <div className="space-y-4">
+              <div className="space-y-10">
                 {[
-                  '40–60% cost savings vs. US, UK, and Australian markets',
-                  'English-speaking crew trained to international standards',
-                  'RED, Sony FX, and ARRI camera systems available',
-                  '30% Thailand government cash rebate program',
-                  'Diverse locations: city, temples, beaches, jungle, mountains',
-                  'Established studio facilities and post-production houses',
+                  { icon: <DollarSign size={20} />, title: '40–60% Cost Savings', desc: 'The same equipment, crew quality, and production value — at a fraction of US, UK, or Australian prices.' },
+                  { icon: <Globe size={20} />, title: 'Diverse Locations', desc: 'Modern skyline, ancient temples, tropical beaches, lush jungle — all within a few hours of Bangkok.' },
+                  { icon: <Users size={20} />, title: 'Experienced English-Speaking Crew', desc: 'Bangkok has one of Southeast Asia\'s deepest talent pools of internationally trained, English-fluent professionals.' },
+                  { icon: <Zap size={20} />, title: 'Up to 30% Government Rebate', desc: 'Qualifying foreign productions can recover up to 30% of production expenses through Thailand\'s incentive program.' },
                 ].map(item => (
-                  <div key={item} className="flex items-start gap-3">
-                    <CheckCircle2 size={18} className="shrink-0 mt-0.5" style={{ color: 'var(--color-accent)' }} />
-                    <span className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{item}</span>
+                  <div key={item.title} className="flex gap-5">
+                    <div className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'var(--color-accent-muted)', color: 'var(--color-accent)' }}>
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-base font-semibold mb-2">{item.title}</h3>
+                      <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>{item.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="space-y-4">
-              {[
-                { value: '฿7.7B', label: 'Generated from foreign productions in Thailand (2025)', sub: '~$245M USD' },
-                { value: '546', label: 'Foreign productions filmed in Thailand in 2025' },
-                { value: '30%', label: 'Government cash rebate for qualifying productions' },
-                { value: '40–60%', label: 'Typical cost savings vs. Western production markets' },
-              ].map(stat => (
-                <div key={stat.label} className="p-6 rounded-2xl" style={{ background: 'var(--color-surface-2)', border: '1px solid var(--color-border)' }}>
-                  <div className="flex items-baseline gap-3 mb-2">
-                    <span className="text-3xl font-bold" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-accent)' }}>{stat.value}</span>
-                    {stat.sub && <span className="text-sm" style={{ color: 'var(--color-text-faint)' }}>{stat.sub}</span>}
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-10" style={{ fontFamily: 'var(--font-display)' }}>
+                Why Choose VidFlair?
+              </h2>
+              <p className="text-base mb-12" style={{ color: 'var(--color-text-muted)', lineHeight: '1.8' }}>
+                We built VidFlair to solve the problems international clients face when producing video in Thailand.
+              </p>
+              <div className="space-y-8">
+                {[
+                  { num: '01', title: 'Transparent Pricing', desc: 'Itemized quotes within 24 hours. No hidden markups, no surprise costs. You see exactly what you\'re paying for.' },
+                  { num: '02', title: 'Single Point of Contact', desc: 'One English-speaking producer manages your entire project — from brief to final delivery, permits to post-production.' },
+                  { num: '03', title: 'Global Quality Standards', desc: 'We shoot on RED, Sony FX, and ARRI systems. Our editors work in DaVinci Resolve and Premiere Pro. Broadcast-ready output, every time.' },
+                  { num: '04', title: 'Fast Turnaround', desc: 'Social content in 5-7 days. Corporate video in 3-6 weeks. Rush timelines available when you need them.' },
+                ].map(item => (
+                  <div key={item.num} className="p-7 rounded-xl" style={{ background: 'var(--color-surface-2)', border: '1px solid var(--color-border)' }}>
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-xs font-bold" style={{ color: 'var(--color-accent)' }}>{item.num}</span>
+                      <h3 className="text-base font-semibold">{item.title}</h3>
+                    </div>
+                    <p className="text-sm pl-8 leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>{item.desc}</p>
                   </div>
-                  <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{stat.label}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-28 md:py-40">
+      {/* Cost comparison */}
+      <section className="py-36 md:py-56">
         <div className="container-default">
-          <div className="max-w-3xl mx-auto text-center mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)' }}>How It Works</h2>
-            <p className="text-base" style={{ color: 'var(--color-text-muted)', lineHeight: '1.7' }}>Simple, transparent, and professional from brief to delivery.</p>
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)' }}>Bangkok vs. Western Pricing</h2>
+            <p className="text-base md:text-lg max-w-xl mx-auto" style={{ color: 'var(--color-text-muted)' }}>
+              Same quality. Same standards. Significantly less.
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { num: '01', title: 'Brief & Quote', desc: 'Share your project details. Receive a transparent, itemized quote within 24 hours.' },
-              { num: '02', title: 'Pre-Production', desc: 'We handle location scouting, permits, crew scheduling, and equipment logistics.' },
-              { num: '03', title: 'Production', desc: 'Professional crew executes your vision with world-class equipment and expertise.' },
-              { num: '04', title: 'Post & Delivery', desc: 'Editing, color grading, and sound design. Delivered on time, on spec, on budget.' },
-            ].map(step => (
-              <div key={step.num} className="p-8 rounded-2xl" style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)' }}>
-                <span className="text-4xl font-bold block mb-5" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-accent)', opacity: 0.5 }}>{step.num}</span>
-                <h3 className="text-base font-semibold mb-3" style={{ fontFamily: 'var(--font-display)' }}>{step.title}</h3>
-                <p className="text-sm" style={{ color: 'var(--color-text-muted)', lineHeight: '1.6' }}>{step.desc}</p>
-              </div>
-            ))}
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-sm">
+              <thead>
+                <tr style={{ borderBottom: '2px solid var(--color-border)' }}>
+                  <th className="py-5 pr-6 font-semibold">Service</th>
+                  <th className="py-5 px-6 font-semibold" style={{ color: 'var(--color-accent)' }}>Bangkok (VidFlair)</th>
+                  <th className="py-5 pl-6 font-semibold" style={{ color: 'var(--color-text-muted)' }}>US / UK / Australia</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['Corporate video (1-2 min)', '$4,200 – $8,500', '$10,000 – $25,000'],
+                  ['Social media video', '$425 – $1,000', '$1,500 – $5,000'],
+                  ['Event coverage (full day)', '$1,420 – $3,400', '$3,000 – $8,000'],
+                  ['Drone filming (half day)', '$570 – $1,140', '$1,500 – $3,000'],
+                  ['Video editing (per minute)', '$225 – $710', '$500 – $2,000'],
+                  ['30-sec commercial', '$22,700+', '$50,000 – $150,000'],
+                ].map(([service, bkk, west]) => (
+                  <tr key={service} style={{ borderBottom: '1px solid var(--color-border)' }}>
+                    <td className="py-5 pr-6">{service}</td>
+                    <td className="py-5 px-6 font-medium" style={{ color: 'var(--color-accent)' }}>{bkk}</td>
+                    <td className="py-5 pl-6" style={{ color: 'var(--color-text-faint)' }}>{west}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-28 md:py-40" style={{ background: 'var(--color-surface)' }}>
-        <div className="container-default">
-          <div className="max-w-3xl mx-auto text-center mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)' }}>What Clients Say</h2>
+      {/* Blog preview */}
+      <section className="py-36 md:py-56" style={{ background: 'var(--color-surface)' }}>
+        <div className="container-wide">
+          <div className="flex items-end justify-between mb-20">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
+                Production Insights
+              </h2>
+              <p className="text-base" style={{ color: 'var(--color-text-muted)' }}>
+                Guides, pricing breakdowns, and insider knowledge for filming in Thailand.
+              </p>
+            </div>
+            <Link href="/blog" className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium" style={{ color: 'var(--color-accent)' }}>
+              All Articles <ArrowRight size={14} />
+            </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { quote: 'The transparency was unlike any production company we\'d worked with before. Every line item was explained, and they delivered on every promise.', name: 'Sarah M.', title: 'Marketing Director, Global Tech Brand' },
-              { quote: 'We needed a Bangkok production company that could meet our international quality standards. VidFlair did that and came in 45% under what we\'d budgeted for a US shoot.', name: 'James K.', title: 'VP Creative, Retail Brand' },
-              { quote: 'Communication was flawless. Our English-speaking producer was responsive at every step. The final product exceeded expectations.', name: 'Lisa T.', title: 'Content Director, Media Company' },
-            ].map(t => (
-              <div key={t.name} className="p-8 rounded-2xl flex flex-col" style={{ background: 'var(--color-surface-2)', border: '1px solid var(--color-border)' }}>
-                <div className="flex gap-1 mb-5">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="currentColor" style={{ color: 'var(--color-accent)' }} />)}
-                </div>
-                <p className="text-sm flex-1 mb-6" style={{ color: 'var(--color-text-muted)', lineHeight: '1.7' }}>&ldquo;{t.quote}&rdquo;</p>
-                <div>
-                  <p className="text-sm font-semibold">{t.name}</p>
-                  <p className="text-xs" style={{ color: 'var(--color-text-faint)' }}>{t.title}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Blog */}
-      {posts.length > 0 && (
-        <section className="py-28 md:py-40">
-          <div className="container-default">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold" style={{ fontFamily: 'var(--font-display)' }}>Production Insights</h2>
-                <p className="text-base mt-4" style={{ color: 'var(--color-text-muted)' }}>Guides and knowledge for filming in Bangkok.</p>
-              </div>
-              <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm font-medium shrink-0" style={{ color: 'var(--color-accent)' }}>
-                All articles <ChevronRight size={16} />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {posts.map(post => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group p-10 rounded-2xl transition-all hover:translate-y-[-2px]"
+                style={{ background: 'var(--color-surface-2)', border: '1px solid var(--color-border)' }}
+              >
+                <span className="text-xs font-medium px-2.5 py-1 rounded-full mb-6 inline-block" style={{ background: 'var(--color-accent-muted)', color: 'var(--color-accent)' }}>
+                  {post.category}
+                </span>
+                <h3 className="text-lg font-semibold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
+                  {post.title}
+                </h3>
+                <p className="text-sm mb-6 leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
+                  {post.excerpt.slice(0, 140)}…
+                </p>
+                <span className="text-xs" style={{ color: 'var(--color-text-faint)' }}>
+                  {post.readTime}
+                </span>
               </Link>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {posts.map(p => (
-                <Link key={p.slug} href={`/blog/${p.slug}`} className="group p-8 rounded-2xl transition-all hover:translate-y-[-2px]" style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)' }}>
-                  <span className="text-xs font-medium px-2.5 py-1 rounded-full mb-5 inline-block" style={{ background: 'var(--color-accent-muted)', color: 'var(--color-accent)' }}>{p.category}</span>
-                  <h3 className="text-lg font-semibold mb-3 group-hover:text-[var(--color-accent)] transition-colors" style={{ fontFamily: 'var(--font-display)' }}>{p.title}</h3>
-                  <p className="text-sm mb-5" style={{ color: 'var(--color-text-muted)', lineHeight: '1.6' }}>{p.excerpt.slice(0, 100)}…</p>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-medium" style={{ color: 'var(--color-accent)' }}>Read more <ArrowRight size={14} /></span>
-                </Link>
-              ))}
-            </div>
+            ))}
           </div>
-        </section>
-      )}
+          <div className="sm:hidden mt-10 text-center">
+            <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm font-medium" style={{ color: 'var(--color-accent)' }}>
+              All Articles <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
 
-      {/* CTA */}
-      <section className="py-28 md:py-40" style={{ background: 'var(--color-surface)' }}>
-        <div className="container-narrow text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8" style={{ fontFamily: 'var(--font-display)', lineHeight: '1.1' }}>
-            Ready to Produce<br />
-            <span className="text-gradient">Your Next Video?</span>
-          </h2>
-          <p className="text-lg mb-12 max-w-lg mx-auto" style={{ color: 'var(--color-text-muted)', lineHeight: '1.7' }}>
-            Get a transparent, itemized quote within 24 hours. No obligation, no surprises.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold rounded-xl transition-all hover:opacity-90" style={{ background: 'var(--color-accent)', color: 'var(--color-accent-text)' }}>
-              Get a Free Quote <ArrowRight size={18} />
-            </Link>
-            <Link href="/services" className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-medium rounded-xl transition-all" style={{ background: 'transparent', border: '1px solid var(--color-border)', color: 'var(--color-text-muted)' }}>
-              Explore Services <ChevronRight size={16} />
-            </Link>
+      {/* FAQ */}
+      <FAQSection faqs={homeFaqs} title="Frequently Asked Questions About Video Production in Bangkok" />
+
+      {/* CTA / Contact */}
+      <section className="py-36 md:py-56" style={{ background: 'var(--color-surface)' }}>
+        <div className="container-default">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
+            <div className="flex flex-col justify-center">
+              <h2 className="text-3xl md:text-5xl font-bold mb-10" style={{ fontFamily: 'var(--font-display)' }}>
+                Ready to Produce<br />Something Great?
+              </h2>
+              <p className="text-base md:text-lg mb-12" style={{ color: 'var(--color-text-muted)', lineHeight: '1.8' }}>
+                Tell us about your project and get a detailed, itemized quote within 24 hours. No obligation, no hidden fees — just transparent pricing from a team that speaks your language.
+              </p>
+              <div className="space-y-6">
+                {[
+                  'Free, no-obligation quote within 24 hours',
+                  'Itemized pricing — you see every line item',
+                  'Direct communication with your producer',
+                  'Flexible timelines to match your schedule',
+                ].map(item => (
+                  <div key={item} className="flex items-center gap-4">
+                    <div className="w-6 h-6 rounded-full flex items-center justify-center shrink-0" style={{ background: 'var(--color-accent)' }}>
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6L5 8.5L9.5 3.5" stroke="var(--color-bg)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    </div>
+                    <span className="text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="p-12 rounded-2xl" style={{ background: 'var(--color-surface-2)', border: '1px solid var(--color-border)' }}>
+              <ContactForm />
+            </div>
           </div>
         </div>
       </section>
