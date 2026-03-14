@@ -160,7 +160,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         { name: post.title, url: `https://vidflair.com/blog/${post.slug}` },
       ]} />
 
-      <article className="pt-40 pb-20 md:pt-52 md:pb-32">
+      <article className="pt-40 pb-28 md:pt-52 md:pb-40">
         <div className="container-narrow">
           <nav className="flex items-center gap-2 text-xs mb-10" style={{ color: 'var(--color-text-faint)' }} aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[var(--color-text)] transition-colors">Home</Link>
@@ -170,7 +170,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <span style={{ color: 'var(--color-text-muted)' }} className="truncate">{post.title}</span>
           </nav>
 
-          <header className="mb-16">
+          <header className="mb-20">
             <span className="text-xs font-medium px-2.5 py-1 rounded-full mb-6 inline-block" style={{ background: 'var(--color-accent-muted)', color: 'var(--color-accent)' }}>
               {post.category}
             </span>
@@ -193,12 +193,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       </article>
 
       {/* CTA */}
-      <section className="py-28 md:py-40" style={{ background: 'var(--color-surface)' }}>
+      <section className="py-36 md:py-56" style={{ background: 'var(--color-surface)' }}>
         <div className="container-narrow text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)' }}>
+          <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ fontFamily: 'var(--font-display)' }}>
             Ready to Start Your Project?
           </h2>
-          <p className="text-base mb-10 max-w-lg mx-auto" style={{ color: 'var(--color-text-muted)' }}>
+          <p className="text-base mb-12 max-w-lg mx-auto" style={{ color: 'var(--color-text-muted)' }}>
             Get a transparent, itemized quote for your video production project in Bangkok.
           </p>
           <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-4 text-base font-semibold rounded-xl transition-all hover:opacity-90" style={{ background: 'var(--color-accent)', color: 'var(--color-accent-text)' }}>
@@ -209,14 +209,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       {/* Related posts */}
       {otherPosts.length > 0 && (
-        <section className="py-28 md:py-40">
+        <section className="py-36 md:py-56">
           <div className="container-default">
-            <h2 className="text-2xl font-bold mb-12" style={{ fontFamily: 'var(--font-display)' }}>More Articles</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <h2 className="text-2xl font-bold mb-16" style={{ fontFamily: 'var(--font-display)' }}>More Articles</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               {otherPosts.map(p => (
-                <Link key={p.slug} href={`/blog/${p.slug}`} className="group p-8 rounded-2xl transition-all hover:translate-y-[-2px]" style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)' }}>
-                  <span className="text-xs font-medium px-2.5 py-1 rounded-full mb-4 inline-block" style={{ background: 'var(--color-accent-muted)', color: 'var(--color-accent)' }}>{p.category}</span>
-                  <h3 className="text-lg font-semibold mb-3 group-hover:text-[var(--color-accent)] transition-colors" style={{ fontFamily: 'var(--font-display)' }}>{p.title}</h3>
+                <Link key={p.slug} href={`/blog/${p.slug}`} className="group p-10 rounded-2xl transition-all hover:translate-y-[-2px]" style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)' }}>
+                  <span className="text-xs font-medium px-2.5 py-1 rounded-full mb-5 inline-block" style={{ background: 'var(--color-accent-muted)', color: 'var(--color-accent)' }}>{p.category}</span>
+                  <h3 className="text-lg font-semibold mb-4 group-hover:text-[var(--color-accent)] transition-colors" style={{ fontFamily: 'var(--font-display)' }}>{p.title}</h3>
                   <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{p.excerpt.slice(0, 120)}…</p>
                 </Link>
               ))}

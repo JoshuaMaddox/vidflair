@@ -20,7 +20,7 @@ export default function BlogIndex() {
         { name: 'Blog', url: 'https://vidflair.com/blog' },
       ]} />
 
-      <section className="pt-40 pb-12 md:pt-52 md:pb-16">
+      <section className="pt-40 pb-16 md:pt-52 md:pb-24">
         <div className="container-default">
           <nav className="flex items-center gap-2 text-xs mb-8" style={{ color: 'var(--color-text-faint)' }} aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[var(--color-text)] transition-colors">Home</Link>
@@ -36,14 +36,14 @@ export default function BlogIndex() {
         </div>
       </section>
 
-      <section className="pb-28 md:pb-40">
+      <section className="pb-36 md:pb-56">
         <div className="container-default">
-          <div className="space-y-8">
+          <div className="space-y-10">
             {posts.map((post, i) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group block p-10 rounded-2xl transition-all hover:translate-y-[-2px]"
+                className="group block p-12 rounded-2xl transition-all hover:translate-y-[-2px]"
                 style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)' }}
               >
                 <div className="flex flex-col md:flex-row md:items-start gap-8">
